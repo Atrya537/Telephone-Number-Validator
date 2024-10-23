@@ -8,7 +8,7 @@ const validateNumber = num => {
     if (num.length < 10) { return false; }
 
     const trimmedNum = num.replace(/\s/g, "");
-    const numberRegex = /1?(\(([0-9][0-9][0-9])\)|([0-9][0-9][0-9]))-?([0-9][0-9][0-9])-?([0-9][0-9][0-9])/;
+    const numberRegex = /^1?(\(\d{3}\)|\d{3})?-?\d{3}-?\d{4}$/;
 
     return trimmedNum.match(numberRegex);
 }
