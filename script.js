@@ -7,6 +7,7 @@ const results = document.getElementById("results-div");
 const validateNumber = num => {
     if (num.length < 10) { return false; }
 
+    // Eliminate whitespace from number and check validity on digits and special characters (i.e. dashes & parentheses)
     const trimmedNum = num.replace(/\s/g, "");
     const numberRegex = /^1?(\(\d{3}\)|\d{3})?-?\d{3}-?\d{4}$/;
 
@@ -17,6 +18,7 @@ const validateNumber = num => {
 checkBtn.addEventListener("click", e => {
     e.preventDefault();
 
+    // Checks if user filled something in before validating
     if (!userInput.value) { alert("Please provide a phone number"); }
     else {
         if (validateNumber(userInput.value)) {
